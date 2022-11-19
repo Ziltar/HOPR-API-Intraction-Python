@@ -7,9 +7,9 @@ The script opens channels to random nodes at regular intervals, sends direct mes
 
 1. Clone the repository : `git clone https://github.com/Ziltar/HOPR-API-Intraction-Python.git && cd HOPR-API-Intraction-Python` 
 3. Install requirements: `pip install requirements.txt `
-4. Edit the *hoprApi.py* File, set NODE_URL, API_KEY, NODE_HOPR_ADR
-	EXAMPLE:
-	NODE_URL = "http://127.0.0.1:3001" 
-	API_KEY = "MyApiToken!12345678!"
+4. Edit the *hoprApi.py* File, set NODE_URL, API_KEY, NODE_HOPR_ADR<br>
+	**EXAMPLE:**<bt>
+	NODE_URL = "http://127.0.0.1:3001" <br>
+	API_KEY = "MyApiToken!12345678!"<br>
 	NODE_HOPR_ADR = "16Uiu2HAm7k3J89Z82XHSYFt1KmMvVUierxxK9qsu3EM72QkB9V8a"
 5. Run *node-text.py*: `python3 node-test.py`
