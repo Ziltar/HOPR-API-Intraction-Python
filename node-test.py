@@ -19,8 +19,14 @@ def doStuff():
    
 def getRandomPeers(peers, amount):
     random_peers = []
-    for i in range (0, amount):
-        random_peers.append(random.choice(peers[0]['connected'])['peerId'])
+    while (len(random_peers) < 10):
+        peer = random.choice(peers[0]['connected'])['peerId']
+        ping_l = ping(peer)
+        print(ping_l)
+        if "latency" in ping_l:
+            if ping_l["latency"] < 10000:
+                print(True)
+                random_peers.append(peer)       
     return random_peers
 
 def sendMessages(peers, msg):
