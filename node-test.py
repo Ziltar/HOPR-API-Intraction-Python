@@ -1,11 +1,12 @@
 from hoprApi import *
 import random, time
-
+import threading
+    
 def main():
     while True:
         doStuff()
-        print("Waiting 60 minutes....")
-        time.sleep(3600)
+        #print("Waiting 60 minutes....")
+        #time.sleep(3600)
         
 
 def doStuff():
@@ -43,12 +44,12 @@ def sendHopMessages(peers):
 def openChannels(peers, amount):
     for peer in peers:
         print("Opening channel: " + peer)
-        openChannel(peer, amount)
+        threading.Thread(target=openChannel, args=(peer, amount)).start()
 
 def closeChannels(peers):
     for peer in peers:
         print("Closing channel: " + peer)
-        close_Channel(peer)
+        threading.Thread(target=close_Channel, args=(peer,)).start()
 
 if __name__ == "__main__":
     main()
